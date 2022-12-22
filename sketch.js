@@ -11,7 +11,7 @@ function setup() {
 
   //add yours here!  should something like:
   let rengarajanOrnament = new taranOrnament(width/2 - 50, height/2);
-  let joelgamingOrnament = new joelOrnament(width/2, 50);
+  let joelgamingOrnament = new joelOrnament(width/2, 200);
 
   // let hladyOrnament = new willOrnament(width/2, height/2);
   // theOrnaments.push(hladyOrnament);
