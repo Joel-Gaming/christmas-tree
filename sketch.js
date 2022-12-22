@@ -12,6 +12,8 @@ function setup() {
   //add yours here!  should something like:
   // let hladyOrnament = new willOrnament(width/2, height/2);
   // theOrnaments.push(hladyOrnament);
+  let joelgamingOrnament = new joelOrnament(width/2, 200);
+  theOrnaments.push(joelgamingOrnament);
 }
 
 function draw() {
@@ -85,3 +87,21 @@ class danOrnament extends Ornament {
 
 //add your class here... should look something like:
 //class willOrnament extends Ornament {
+
+// Joel
+class joelOrnament extends Ornament {
+  constructor(x, y) {
+    super(x, y, "lightBlue", 30, 30);
+  }
+
+  update() {
+    if (random(100) < 50) {
+      this.width++;
+      this.height++;
+    }
+    else {
+      this.width--;
+      this.height--;
+    }
+  }
+}
