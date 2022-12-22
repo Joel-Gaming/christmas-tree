@@ -10,10 +10,13 @@ function setup() {
   theOrnaments.push(schellenbergOrnament);
 
   //add yours here!  should something like:
+  let rengarajanOrnament = new taranOrnament(width/2 - 50, height/2);
+  let joelgamingOrnament = new joelOrnament(width/2, 50);
+
   // let hladyOrnament = new willOrnament(width/2, height/2);
   // theOrnaments.push(hladyOrnament);
-  let joelgamingOrnament = new joelOrnament(width/2, 200);
   theOrnaments.push(joelgamingOrnament);
+  theOrnaments.push(rengarajanOrnament);
 }
 
 function draw() {
@@ -88,7 +91,6 @@ class danOrnament extends Ornament {
 //add your class here... should look something like:
 //class willOrnament extends Ornament {
 
-// Joel
 class joelOrnament extends Ornament {
   constructor(x, y) {
     super(x, y, "lightBlue", 30, 30);
@@ -105,3 +107,32 @@ class joelOrnament extends Ornament {
     }
   }
 }
+
+class taranOrnament extends Ornament {
+  constructor(x, y) {
+    super(x, y, "red", 30, 30);
+  }
+    
+  update() {
+    // if (random(100) < 50) {
+    //   this.width++;
+    //   this.height++;
+    // }
+    // else {
+    //   this.width--;
+    //   this.height--;
+    // }
+    this.someColor = color(sin(millis()/1000) * 255, cos(millis()/1000) * 255, tan(millis()/1000) * 255);
+  }
+  display() {
+    fill(this.someColor);
+    ellipseMode(CENTER);
+    ellipse(this.x, this.y, this.width* sin(millis()/1000) + 10, this.height* sin(millis()/1000)) + 10;
+    textSize(10);
+    stroke(0);
+      
+    text("T",this.width, this.height);
+
+  }
+}
+
